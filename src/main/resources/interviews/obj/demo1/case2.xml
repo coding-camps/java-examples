@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<testCase name="testCase1">
+    <items>
+        <item name="book" count="1" unitPrice="12.49" type="book" imported="false"></item>
+        <item name="music CD" count="1" unitPrice="14.99" type="av" imported="false"></item>
+        <item name="chocolate bar" count="1" unitPrice="0.85" type="food" imported="false"></item>
+    </items>
+    <result taxes="1.50" total="29.83"></result>
+</testCase>

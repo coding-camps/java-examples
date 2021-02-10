@@ -1,0 +1,16 @@
+功能：书籍、食品和药品免税，基本税10%，进口税5%
+
+后续设计：
+1 三层设计：数据交互层、业务逻辑层、数据展示层；
+2 数据交互层：读取xml中商品信息，保存到list<form>中；
+3 业务逻辑层：处理list<form>中数据，计算价格、税额等；
+4 数据展示层：输出总价格、总税额等数据；
+
+详细设计：
+Program，主程序入口，输出数据
+ProductForm，商品表单
+ProductResultForm，购物车表单
+IProductService，业务逻辑接口
+ProductService，业务逻辑接口实现
+ProductDAO，数据交互
+XXHelper，辅助类

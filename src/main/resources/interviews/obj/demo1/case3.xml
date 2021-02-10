@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<testCase name="testCase3">
+    <items>
+        <item name="bottle of perfume" count="1" unitPrice="27.99" type="makeup" imported="true"></item>
+        <item name="bottle of perfume" count="1" unitPrice="18.99" type="makeup" imported="false"></item>
+        <item name="packet of headache pills" count="1" unitPrice="9.75" type="medical" imported="false"></item>
+        <item name="box of chocolates" count="1" unitPrice="11.25" type="food" imported="true"></item>
+    </items>
+    <result taxes="6.70" total="74.68"></result>
+</testCase>
