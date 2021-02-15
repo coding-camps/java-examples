@@ -2,6 +2,9 @@ package lang.reflect;
 
 import utils.ReflectUtil;
 
+import java.io.Serializable;
+import java.lang.invoke.SerializedLambda;
+import java.lang.reflect.Method;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
@@ -11,12 +14,26 @@ import java.util.stream.Stream;
  */
 public class LambdaMethods {
 
+    SerializedLambda serializedLambda;
+
+    public static String methodNameFromLambda(Serializable lambda) {
+        try {
+            Method m = lambda.getClass().getDeclaredMethod("writeReplace");
+            m.setAccessible(true);
+            SerializedLambda sl = (SerializedLambda) m.invoke(lambda);
+            return sl.getImplMethodName();
+        } catch (ReflectiveOperationException ex) {
+            throw new RuntimeException(ex);
+        }
+    }
+
 
     public static void main(String[] args) {
 
         Stream.of(LambdaMethods.class.getDeclaredMethods())
                 .forEach(System.out::println);
-
+//        Stream.of(LambdaMethods.class.getDeclaredMethods())
+//                        .forEach( lb -> methodNameFromLambda());
         System.out.println("current method: " + ReflectUtil.currentMethodInfo());
         System.out.println("current code line:" + ReflectUtil.currentCodeLineInfo());
     }
