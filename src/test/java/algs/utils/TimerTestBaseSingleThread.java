@@ -22,7 +22,7 @@ public interface TimerTestBaseSingleThread {
 //        }
         long threadId = Thread.currentThread().getId();
         System.out.println("Thread ID: " + threadId);
-        stopwatch.start();
+        stopwatch.reset();
     }
 
     @AfterEach
