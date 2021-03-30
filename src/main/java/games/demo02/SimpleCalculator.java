@@ -32,7 +32,7 @@ public class SimpleCalculator {
     private void run() {
         System.out.print("请输入一个数：");
         num1 = getNumFromInput();
-        System.out.print("请输入运算符(+ - * /)：");
+        System.out.print("请输入运算符(+ - * /w)：");
         String operator = scanner.next();
         System.out.print("请输入一个数：");
         num2 = getNumFromInput();
